@@ -7,13 +7,13 @@ window.addEventListener('load', () => {
             let lat = position.coords.latitude;
             let long = position.coords.longitude;
 
-            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=1b34bbea396b3a187b04eeb242b957e9`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=1b34bbea396b3a187b04eeb242b957e9&units=metric`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
                     const { temp } = data.main
 
-                    $(".currentTemp").innerHTML = temp + "°C";
+                    $(".currentTemp").innerHTML = Math.round(temp) + "°C";
                 })
         })
     }
