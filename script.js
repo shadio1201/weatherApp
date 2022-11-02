@@ -12,10 +12,12 @@ window.addEventListener('load', () => {
                 .then(data => {
                     console.log(data)
                     const { temp } = data.main
+                    const { description, main } = data.weather[0]
+
+                    const weatherCondition = 'assets/' + String(main).toLowerCase() + '.json';
 
                     $(".currentTemp").innerHTML = Math.round(temp) + "°C";
                 })
         })
     }
 })
-
