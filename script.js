@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
                     const land = { DK: 'Danmark', NO: 'Norge', SE: 'Sverige' }
                     console.log(data)
                     const { temp, temp_max, temp_min } = data.main
+                    const { deg, speed } = data.wind
                     const { country } = data.sys
                     const { description, main } = data.weather[0]
 
@@ -24,6 +25,11 @@ window.addEventListener('load', () => {
                     $(".currentTemp").innerHTML = Math.round(temp) + "°C";
                     $(".currentMaxTemp").innerHTML = Math.round(temp_max) + "°C";
                     $(".currentMinTemp").innerHTML = Math.round(temp_min) + "°C";
+
+                    // Wind data
+                    $('.VindValue').innerHTML = Math.round(speed) + " m/s"
+                    $(':root').style.setProperty('--wind-deg', `${deg}deg`)
+                    $('.windDescription').innerHTML = deg + ' °';
                 })
         })
     }
