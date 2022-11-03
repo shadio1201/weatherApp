@@ -17,7 +17,6 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <header>
         <nav>
             <ul class="navList">
@@ -38,7 +37,7 @@
             <hr class="currentMinMaxLine">
             <p class="currentMinTemp">11°C</p>
         </div>
-        <lottie-player id="iconPlayer" src="assets/rain.json"  background="transparent"  speed="5"  style="width: 125px; height: auto;"  loop autoplay></lottie-player>
+        <div class="lottieWeather" id="lottieWeather"></div>
     </div>
     <main>
     
@@ -74,8 +73,8 @@
                     </svg>
                     
                 <div class="extendedInfoBox">
-                    <h2 class="extendedTitel">UV Indeks</h2>
-                    <h3 class="extendedValue uvValue">1</>
+                    <h2 class="extendedTitel">Føles som</h2>
+                    <h3 class="extendedValue feelsValue">1</>
                 </div>
             </div>
             <div class="extendedCard">
@@ -102,7 +101,7 @@
                     </svg>
                     
                 <div class="extendedInfoBox">
-                    <h2 class="extendedTitel">Regn Chance</h2>
+                    <h2 class="extendedTitel">Chance for regn</h2>
                     <h3 class="extendedValue regnChance">1</h3>
                 </div>
             </div>
@@ -112,41 +111,6 @@
         <section class="timePrognose">
             <h2 class="timeTitel">Time for time</h2>
             <div class="timeKortBeholder">
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
-                <span class="timeKort">
-                    <p class="timeKortTitel">11°C</p>
-                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
-                    <p class="timeKortTid">12:00</p>
-                </span>
             </div>
         </section>
 
@@ -197,5 +161,6 @@
             </div>
         </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

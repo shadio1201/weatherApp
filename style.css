@@ -12,11 +12,11 @@
     --prime-color: #10658E;
     --min-height: 75px;
     --wind-deg: 0deg;
+    --accent-color: rgba(16, 101, 142, 0.15);
 }
 
 .main {
     max-width: 1240px;
-    background-color: red;
     margin: 0 auto;
 }
 
@@ -96,8 +96,7 @@ header nav {
 
 .listItem:nth-child(2):hover input,
 .listItem:nth-child(2) input:focus,
-.listItem:nth-child(2) input:active,
-.listItem:nth-child(2) input:not(:empty) {
+.listItem:nth-child(2) input:active {
     width: 300px;
     visibility: visible;
 }
@@ -155,6 +154,10 @@ header nav {
     color: var(--prime-color);
 }
 
+.lottieWeather {
+    width: 150px;
+}
+
 /* search */
 
 .searchToolkit {
@@ -178,7 +181,7 @@ header nav {
     border-radius: 0 0 15px 15px;
     transition: all 200ms ease-out;
     transform-origin: top;
-    transform: scaleY(0);
+    transform: scaleY(1);
     overflow: hidden;
     box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.29);
 }
@@ -189,6 +192,7 @@ header nav {
     color: black;
     list-style: none;
     font-size: 18px;
+    z-index: 5000;
 }
 
 .searchResults .resultItem:hover {
@@ -228,7 +232,7 @@ header nav {
 }
 
 .extendedWeatherInfo .extendedCard {
-    background-color: #10648e41;
+    background-color: var(--accent-color);
     border-radius: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -275,13 +279,12 @@ header nav {
 
 .timeKortBeholder {
     display: -ms-grid;
-    display: grid;
-    grid-auto-flow: column;
-    place-content: center;
+    display: flex;
     margin: 0 auto;
-    place-content: center;
     width: 80vw;
     max-width: 1240px;
+    overflow-x: scroll;
+
 }
 
 @media only screen and (max-width: 1060px) {
@@ -307,6 +310,10 @@ header nav {
     margin: 1em 1.1em;
     width: 7em;
     text-align: center;
+}
+
+.timeKortIkon {
+    width: 80px;
 }
 
 .motionsAnbefaling {

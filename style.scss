@@ -8,9 +8,12 @@
 }
 
 :root {
-  --prime-color: #10658e;
+  --prime-color: #10658E;
   --min-height: 75px;
+  --wind-deg: 0deg;
+  --accent-color: rgba(16, 101, 142, 0.15);
 }
+
 .main {
   max-width: 1240px;
   background-color: red;
@@ -137,16 +140,18 @@ header nav {
   width: 80vw;
   max-width: 1240px;
   margin: 0 auto;
+
   & div:nth-child(2n + 1) {
-    
+
     grid-column: 1;
-}
-@media only screen and (max-width: 1060px) {
-     & div:nth-child(1n + 1) {
-          
-          grid-column: 1;
-      }
-}
+  }
+
+  @media only screen and (max-width: 1060px) {
+    & div:nth-child(1n + 1) {
+
+      grid-column: 1;
+    }
+  }
 }
 
 .extendedWeatherInfo svg {
@@ -154,27 +159,32 @@ header nav {
   height: fit-content;
   margin: auto 1em auto 0;
 }
+
 .extendedWeatherInfo .extendedCard {
-  background-color: #10648e41;
+  background-color: var(--accent-color);
   border-radius: 10px;
   display: flex;
   margin: 2em 1em;
   padding: 1em;
   width: 30em;
- height: fit-content;
- min-height: 7em;
+  height: fit-content;
+  min-height: 7em;
   line-height: 1.45rem;
-  h3{
-     font-size: 1.7rem;
-     margin-top: .5em;
+
+  h3 {
+    font-size: 1.7rem;
+    margin-top: .5em;
   }
-  .windDirection{
-     margin-left: auto;
-     svg{
-          width: 3em;
-     }
+
+  .windDirection {
+    margin-left: auto;
+
+    svg {
+      width: 3em;
+    }
   }
 }
+
 .extendedInfoBox {
   /* margin-left: auto; */
   margin: auto 0;
@@ -184,11 +194,13 @@ header nav {
 .timeTitel {
   max-width: 1040px;
   margin: 1em auto .2em auto;
+
   @media only screen and (max-width: 1060px) {
-     text-align: center;
+    text-align: center;
+  }
+
 }
-  
-}
+
 .timeKortBeholder {
   display: grid;
   grid-auto-flow: column;
@@ -196,24 +208,26 @@ header nav {
 
 
   margin: 0 auto;
- 
+
   place-content: center;
   width: 80vw;
   max-width: 1240px;
+
   @media only screen and (max-width: 1060px) {
-     & span:nth-child(4n + 1) {
-          background-color: red;
-          grid-column: 3;
-         
-      }
-}
-@media only screen and (max-width: 640px) {
-     & span:nth-child(2n + 1) {
-          background-color: red;
-          grid-column: 3;
-         
-      }
-}
+    & span:nth-child(4n + 1) {
+      background-color: red;
+      grid-column: 3;
+
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    & span:nth-child(2n + 1) {
+      background-color: red;
+      grid-column: 3;
+
+    }
+  }
 }
 
 .timeKort {
@@ -228,35 +242,35 @@ header nav {
 
 
 .motionsAnbefaling {
-     background-color: #099C7D;
-     color: #fbfbfb;
-     width: 70vw;
-     border-radius: 10px;
-     margin: 0 auto;
-     margin-top: 1em;
-     padding: 1em;
-     display: grid;
-     grid-auto-flow: column;
-     line-height: 1.35rem;
-     & div:nth-child(1){
-          transform: scale(0.8);
-          background-color: #fbfbfb;
-          border-radius: 100px 100px;
-          padding: 2em 1em;
-          text-align: center;
-     }
-     & div:nth-child(2){
-          display: grid;
+  background-color: #099C7D;
+  color: #fbfbfb;
+  width: 70vw;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 1em;
+  display: grid;
+  grid-auto-flow: column;
+  line-height: 1.35rem;
+
+  & div:nth-child(1) {
+    transform: scale(0.8);
+    background-color: #fbfbfb;
+    border-radius: 100px 100px;
+    padding: 2em 1em;
+    text-align: center;
+  }
+
+  & div:nth-child(2) {
+    display: grid;
     place-content: center;
-     }
-     h3{
-          font-size: 1.8rem;
-          line-height: 2rem;
-          margin-bottom: .3em;
-     }
+  }
 
-     svg {
-          
-     }
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: .3em;
+  }
+
+  svg {}
 }
-
