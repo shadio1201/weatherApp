@@ -12,6 +12,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <link rel="stylesheet" href="https://use.typekit.net/xzu6rpw.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
@@ -27,13 +28,98 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="dagensVejr">
-            <h2 class="currentLocation">København, Danmark</h2>
-            <h3 class="currentTemp">16 C</h3>
-            <lottie-player src="https://assets9.lottiefiles.com/datafiles/gUENLc1262ccKIO/data.json"  background="transparent"  speed="1"  style="width: 125px; height: auto;"  loop autoplay></lottie-player>
+    <!-- Dagens vejr -->
+    <div class="dagensVejr">
+        <h2 class="currentLocation">København, Danmark</h2>
+        <i class="fa-solid fa-temperature-half"></i>
+        <h3 class="currentTemp">*</h3>
+        <div class="currentMinMax">
+            <p class="currentMaxTemp">11°C</p>
+            <hr class="currentMinMaxLine">
+            <p class="currentMinTemp">11°C</p>
         </div>
+        <lottie-player id="iconPlayer" src="assets/4793-weather-snow.json"  background="transparent"  speed="0.3"  style="width: 125px; height: auto;"  loop autoplay></lottie-player>
+    </div>
+    <main>
+    
+
+    <!-- Udvidet Dagens Vejr Kasser (grid)-->
+        <div class="extendedWeatherInfo">
+            <div class="extendedCard">
+                <i class="fa-solid fa-wind"></i>
+                <div class="extendedInfoBox">
+                    <p class="extendedTitel">Vind</p>
+                    <p class="extendedValue VindValue"></p>
+                </div>
+                <div class="windDirection">
+                    <i class="fa-solid fa-arrow-up arrowDeg"></i>
+                    <p class="windDescription">Nord West</p>
+                </div>
+            </div>
+            <div class="extendedCard">
+                <i class="fa-solid fa-wind"></i>
+                <div class="extendedInfoBox">
+                    <p class="extendedTitel">Vind</p>
+                    <p class="extendedValue uvValue"></p>
+                </div>
+            </div>
+            <div class="extendedCard">
+                <i class="fa-solid fa-wind"></i>
+                <div class="extendedInfoBox">
+                    <p class="extendedTitel">Vind</p>
+                    <p class="extendedValue fugtValue"></p>
+                </div>
+            </div>
+            <div class="extendedCard">
+                <i class="fa-solid fa-wind"></i>
+                <div class="extendedInfoBox">
+                    <p class="extendedTitel">Vind</p>
+                    <p class="extendedValue regnChance"></p>
+                </div>
+            </div>
+        </div>
+
+    <!-- Time for time prognose -->
+        <section class="timePrognose">
+            <h2 class="timeTitel">Time for time</h2>
+            <div class="timeKortBeholder">
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+                <span class="timeKort">
+                    <p class="timeKortTitel">11°C</p>
+                    <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    <p class="timeKortTid">12:00</p>
+                </span>
+            </div>
+        </section>
     </main>
-    <div class="data"></div>
 </body>
 </html>
