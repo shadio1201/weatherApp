@@ -128,3 +128,29 @@ header nav {
     font-size: 4rem;
     color: var(--prime-color);
 }
+
+/* search */
+
+.searchToolkit {
+    position: relative;
+    z-index: 1000;
+}
+
+.searchResults {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: fit-content;
+    margin-top: -25px;
+    padding-top: 25px;
+    z-index: -1;
+    border-radius: 0 0 15px 15px;
+}
+
+.searchResults .resultItem {
+    width: 100%;
+    padding: 10px 15px;
+    color: black;
+    list-style: none;
+    font-size: 12px;
+}
