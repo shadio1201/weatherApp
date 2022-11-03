@@ -22,7 +22,7 @@
         <nav>
             <ul class="navList">
                 <li class="listItem">Logo</li>
-                <li class="listItem searchToolkit"><div class="searchBox"><i class="fa-solid fa-magnifying-glass"></i><input class="searchTool" type="text" placeholder="Search..."></div><ul class="searchResults">
+                <li class="listItem searchToolkit"><div class="searchBox"><i class="fa-solid fa-magnifying-glass"></i><input class="searchTool" type="text" placeholder="Lokation..."></div><ul class="searchResults">
                 </ul></li>
                 <li class="listItem"><p class="vejrKortText">Vejrkort</p><i class="fa-solid fa-layer-group"></i></li>
             </ul>
@@ -38,7 +38,7 @@
             <hr class="currentMinMaxLine">
             <p class="currentMinTemp">11°C</p>
         </div>
-        <lottie-player id="iconPlayer" src="assets/4793-weather-snow.json"  background="transparent"  speed="0.3"  style="width: 125px; height: auto;"  loop autoplay></lottie-player>
+        <lottie-player id="iconPlayer" src="assets/rain.json"  background="transparent"  speed="5"  style="width: 125px; height: auto;"  loop autoplay></lottie-player>
     </div>
     <main>
     
@@ -118,6 +118,34 @@
                     <img class="timeKortIkon" src="http://openweathermap.org/img/wn/10d@2x.png">
                     <p class="timeKortTid">12:00</p>
                 </span>
+            </div>
+        </section>
+
+        <section class="syvDagesContainer">
+            <div class="syvDagesPrognose">
+
+                <!--Kontroller-->
+                <div class="syvDagesKontrolBar">
+                    <h2 class="titel">7 Dages Prognose</h2>
+                    <div class="filter"><i class="fa-solid fa-filter"></i> Filter</div>
+                    <span class="weekSelector"><i class="fa-solid fa-arrow-left"></i> uge 42 <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Selve Prognose -->
+                <div class="syvDagesDataContainer">
+                    <!-- Kort -->
+                    <div class="syvDagesKort">
+                        <!--icon-->
+                        <h3 class="temp">17</h3>
+                        <span class="minMax">
+                            <p class="min">7</p>
+                            <p class="max">12</p>
+                        </span>
+                        <hr class="kortLinje">
+                        <p class="regnInfo"><i class="fa-solid fa-wind">Regn</i></p>
+                        <p class="vindInfo"><i class="fa-solid fa-wind">Vind</i></p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

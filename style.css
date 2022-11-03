@@ -11,7 +11,7 @@
 :root {
     --prime-color: #10658E;
     --min-height: 75px;
-    --wind-deg: 180deg;
+    --wind-deg: 0deg;
 }
 
 .main {
@@ -63,7 +63,7 @@ main {
 .listItem:nth-child(2) .searchBox {
     background-color: #fff;
     width: fit-content;
-    border-radius: 50px;
+    border-radius: 15px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -94,8 +94,10 @@ main {
 
 .listItem:nth-child(2):hover input,
 .listItem:nth-child(2) input:focus,
-.listItem:nth-child(2) input:active {
+.listItem:nth-child(2) input:active,
+.listItem:nth-child(2) input:not(:empty) {
     width: 300px;
+    visibility: visible;
 }
 
 
@@ -151,15 +153,25 @@ main {
     z-index: 1000;
 }
 
+.searchTool {
+    visibility: hidden;
+    font-weight: 800;
+}
+
 .searchResults {
     position: absolute;
     background-color: #fff;
     width: 100%;
     height: fit-content;
-    margin-top: -25px;
+    margin-top: -20px;
     padding-top: 25px;
     z-index: -1;
     border-radius: 0 0 15px 15px;
+    transition: all 200ms ease-out;
+    transform-origin: top;
+    transform: scaleY(0);
+    overflow: hidden;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.29);
 }
 
 .searchResults .resultItem {
@@ -167,7 +179,12 @@ main {
     padding: 10px 15px;
     color: black;
     list-style: none;
-    font-size: 12px;
+    font-size: 18px;
+}
+
+.searchResults .resultItem:hover {
+    background-color: var(--prime-color);
+    color: #fff;
 }
 
 
