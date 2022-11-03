@@ -1,8 +1,25 @@
-const accuweather_api_key = 'iGz1SaKzuE4IvdmTBCzMjPBs69KGINlb'
+const accuweather_api_key = 'hTAV4tLYiRhBSRVdBrjvrnqj38DwvZ8r'
 
 const $ = (input) => {
     return document.querySelector(input);
 }
+
+const tid = () => {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    $('.clock').innerText = h + ":" + m;
+    setTimeout(tid, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+    return i;
+}
+
 
 // Lottiefile
 const lottie = $('.lottieWeather');
@@ -21,6 +38,7 @@ function setIcon(iconName) {
 let firstData;
 
 window.addEventListener('load', () => {
+    tid();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             let lat = position.coords.latitude;
@@ -32,6 +50,12 @@ window.addEventListener('load', () => {
                     let country = data.city.country;
                     changeWeatherData(data, cityName, country)
                 })
+            fetch(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${accuweather_api_key}&q=${lat}%2C${long}`)
+                .then(res => res.json())
+                .then(data => {
+                    fetchNewCity(data.LocalizedName, data.Key)
+                })
+
         })
     }
 })
@@ -89,7 +113,7 @@ const fetchNewCity = (city, locationKey) => {
     fetch(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=${accuweather_api_key}&metric=true`)
         .then(res => res.json())
         .then(forecast => {
-            console.log(forecast)
+            $('.timeKortBeholder').innerHTML = "";
             for (let i = 0; i < forecast.length; i++) {
                 let span = document.createElement('span');
                 let firstP = document.createElement('p');
@@ -102,7 +126,7 @@ const fetchNewCity = (city, locationKey) => {
                 secondP.classList.add('timeKortTid');
                 img.classList.add('timeKortIkon');
 
-                img.src = `assets/png/${forecast[i].IconPhrase.split(' ').join('')}.png`
+                img.src = `assets/png/${forecast[i].IconPhrase.split(' ').join('').replace(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, '')}.png`
 
                 firstP.innerText = forecast[i].Temperature.Value + '°C';
                 secondP.innerText = forecast[i].DateTime.split('').splice(11, 5).join('')
@@ -132,12 +156,11 @@ const fetchNewCity = (city, locationKey) => {
 const changeWeatherData = (weather, place, country) => {
     let data = weather.list[0];
     console.log(data)
-
     $('.lottieWeather').innerHTML = "";
     let currentIcon = data.weather[0].main.split(' ').join('').toLowerCase();
     setIcon(currentIcon);
 
-    const land = { DK: 'Danmark', NO: 'Norge', SE: 'Sverige' }
+    const land = { DK: 'Danmark', NO: 'Norge', SE: 'Sverige', ES: 'Spanien' }
     const { feels_like, humidity, temp, temp_max, temp_min } = data.main
     const { deg, speed } = data.wind
     const { description, main } = data.weather[0]
@@ -155,7 +178,7 @@ const changeWeatherData = (weather, place, country) => {
     $(':root').style.setProperty('--wind-deg', `${deg}deg`)
     $('.windDescription').innerHTML = deg + ' °';
 
-    $('.feelsValue').innerHTML = feels_like + "°C";
+    $('.feelsValue').innerHTML = Math.floor(feels_like) + "°C";
 
     //Luftfugtighed
     $('.fugtValue').innerHTML = humidity + ' g/m³';
